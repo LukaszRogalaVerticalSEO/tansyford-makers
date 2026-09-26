@@ -18,7 +18,7 @@ jobs:
       - name: Build
         env:
           T2_FACTS: ${{ secrets.T2_FACTS }}
-        run: python3 build.py _site > /dev/null
+        run: python3 build.py _site > /dev/null && cp *.txt _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
